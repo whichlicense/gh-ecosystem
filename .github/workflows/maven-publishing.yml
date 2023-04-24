@@ -1,0 +1,28 @@
+#
+# Copyright (c) 2023 - for information on the respective copyright owner
+# see the NOTICE file and/or the repository https://github.com/whichlicense/gh-ecosystem.
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+name: Maven Publishing
+
+on:
+  workflow_dispatch:
+
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        directory: [ sourcing ]
+    uses: whichlicense/.github/.github/workflows/maven-publishing.yml@main
+    with:
+      root-directory: ${{ matrix.directory }}
+    secrets: inherit
