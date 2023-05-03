@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "com.whichlicense.sourcing"
-version = "0.1.6-SNAPSHOT"
+version = "0.2.0-SNAPSHOT"
 
 java {
     toolchain {
@@ -33,14 +33,14 @@ configurations.all {
 }
 
 dependencies {
-    api("com.whichlicense:sourcing:0.1.6-SNAPSHOT")
+    api("com.whichlicense:sourcing:0.2.0-SNAPSHOT")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.9.3")
     testImplementation("org.mockito:mockito-subclass:5.3.1")
     testImplementation("org.mockito:mockito-junit-jupiter:5.3.1")
     testImplementation("org.assertj:assertj-core:3.24.2")
-    testImplementation("com.whichlicense.testing:naming:0.1.6-SNAPSHOT")
-    testImplementation("com.whichlicense.testing:nullable:0.1.6-SNAPSHOT")
+    testImplementation("com.whichlicense.testing:naming:0.2.0-SNAPSHOT")
+    testImplementation("com.whichlicense.testing:nullable:0.2.0-SNAPSHOT")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
 }
 
