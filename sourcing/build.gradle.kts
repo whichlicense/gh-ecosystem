@@ -33,7 +33,7 @@ configurations.all {
 }
 
 dependencies {
-    api("com.whichlicense:sourcing:0.2.0-SNAPSHOT")
+    api("com.whichlicense:sourcing:0.6.4-SNAPSHOT")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.9.3")
     testImplementation("org.mockito:mockito-subclass:5.3.1")
