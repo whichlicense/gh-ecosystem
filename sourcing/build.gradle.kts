@@ -56,6 +56,12 @@ tasks.getByName<Test>("test") {
     jvmArgs("--enable-preview")
 }
 
+tasks.withType<Javadoc> {
+    val javadocOptions = options as CoreJavadocOptions
+    javadocOptions.addStringOption("source", "20")
+    javadocOptions.addBooleanOption("-enable-preview", true)
+}
+
 publishing {
     publications {
         create<MavenPublication>("github") {
