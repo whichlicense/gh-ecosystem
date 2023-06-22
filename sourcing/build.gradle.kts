@@ -37,7 +37,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.9.3")
     testImplementation("org.mockito:mockito-subclass:5.4.0")
-    testImplementation("org.mockito:mockito-junit-jupiter:5.3.1")
+    testImplementation("org.mockito:mockito-junit-jupiter:5.4.0")
     testImplementation("org.assertj:assertj-core:3.24.2")
     testImplementation("com.whichlicense.testing:naming:0.3.0-SNAPSHOT")
     testImplementation("com.whichlicense.testing:nullable:0.3.0-SNAPSHOT")
