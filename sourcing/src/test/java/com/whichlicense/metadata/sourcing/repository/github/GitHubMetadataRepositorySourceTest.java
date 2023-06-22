@@ -9,7 +9,6 @@ package com.whichlicense.metadata.sourcing.repository.github;
 import com.whichlicense.metadata.sourcing.MetadataOrigin;
 import com.whichlicense.metadata.sourcing.MetadataOrigin.RawPath;
 import com.whichlicense.testing.nullable.NullSubstituteSource;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 
@@ -17,6 +16,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -32,20 +32,20 @@ class GitHubMetadataRepositorySourceTest {
         }
     }
 
-    static final Arguments URL_ARGS = Arguments.of("username", "repository", "commit", PATH, URL);
-    static final Arguments ORIGIN_ARGS = Arguments.of("username", "repository", "commit", PATH, new RawPath(PATH));
+    static final Arguments URL_ARGS = Arguments.of("username", "repository", "branch", Set.of("tag"), "commit", PATH, URL);
+    static final Arguments ORIGIN_ARGS = Arguments.of("username", "repository", "branch", Set.of("tag"), "commit", PATH, new RawPath(PATH));
 
     @ParameterizedTest
     @NullSubstituteSource("URL_ARGS")
-    void givenNullableArgumentsWhenCallingTheConstructorThenThrowNullPointerException(String username, String repository, String commit, Path path, URL url) {
-        assertThatThrownBy(() -> new GitHubMetadataRepositorySource(username, repository, commit, path, url))
+    void givenNullableArgumentsWhenCallingTheConstructorThenThrowNullPointerException(String username, String repository, String branch, Set<String> tags, String commit, Path path, URL url) {
+        assertThatThrownBy(() -> new GitHubMetadataRepositorySource(username, repository, branch, tags, commit, path, url))
                 .isExactlyInstanceOf(NullPointerException.class);
     }
 
     @ParameterizedTest
     @NullSubstituteSource("ORIGIN_ARGS")
-    void givenNullableArgumentsWhenCallingTheConstructorThenThrowNullPointerException(String username, String repository, String commit, Path path, MetadataOrigin origin) {
-        assertThatThrownBy(() -> new GitHubMetadataRepositorySource(username, repository, commit, path, origin))
+    void givenNullableArgumentsWhenCallingTheConstructorThenThrowNullPointerException(String username, String repository, String branch, Set<String> tags, String commit, Path path, MetadataOrigin origin) {
+        assertThatThrownBy(() -> new GitHubMetadataRepositorySource(username, repository, branch, tags, commit, path, origin))
                 .isExactlyInstanceOf(NullPointerException.class);
     }
 }

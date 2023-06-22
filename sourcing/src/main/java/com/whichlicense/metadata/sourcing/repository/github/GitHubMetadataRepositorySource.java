@@ -13,15 +13,18 @@ import com.whichlicense.metadata.sourcing.repository.MetadataRepositorySource;
 import java.net.URL;
 import java.nio.file.Path;
 import java.util.Objects;
+import java.util.Set;
 
-public record GitHubMetadataRepositorySource(String username, String repository, String commit, Path path, MetadataOrigin origin) implements MetadataRepositorySource {
-    public GitHubMetadataRepositorySource(String username, String repository, String commit, Path path, URL url) {
-        this(username, repository, commit, path, new RawURL(Objects.requireNonNull(url)));
+public record GitHubMetadataRepositorySource(String username, String repository, String branch, Set<String> tags, String commit, Path path, MetadataOrigin origin) implements MetadataRepositorySource {
+    public GitHubMetadataRepositorySource(String username, String repository, String branch, Set<String> tags, String commit, Path path, URL url) {
+        this(username, repository, branch, tags, commit, path, new RawURL(Objects.requireNonNull(url)));
     }
 
     public GitHubMetadataRepositorySource {
         Objects.requireNonNull(username);
         Objects.requireNonNull(repository);
+        Objects.requireNonNull(branch);
+        Objects.requireNonNull(tags);
         Objects.requireNonNull(commit);
         Objects.requireNonNull(path);
         Objects.requireNonNull(origin);

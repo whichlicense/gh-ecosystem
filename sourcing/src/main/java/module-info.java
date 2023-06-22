@@ -10,7 +10,12 @@ import com.whichlicense.metadata.sourcing.repository.github.GitHubMetadataReposi
 
 module whichlicense.sourcing.github {
     requires java.logging;
+    requires com.fasterxml.jackson.databind;
+    requires com.fasterxml.jackson.annotation;
+    requires configuration.configuration;
     requires transitive whichlicense.sourcing;
     exports com.whichlicense.metadata.sourcing.repository.github;
+    exports com.whichlicense.metadata.sourcing.repository.github.exceptions;
+    opens com.whichlicense.metadata.sourcing.repository.github.internal to com.fasterxml.jackson.databind;
     provides MetadataSourceResolverProvider with GitHubMetadataRepositorySourceResolverProvider;
 }

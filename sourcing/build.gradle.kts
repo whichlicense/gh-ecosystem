@@ -11,11 +11,11 @@ plugins {
 }
 
 group = "com.whichlicense.sourcing"
-version = "0.2.0-SNAPSHOT"
+version = "0.7.7-SNAPSHOT"
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(19))
+        languageVersion.set(JavaLanguageVersion.of(20))
     }
     withJavadocJar()
     withSourcesJar()
@@ -33,14 +33,17 @@ configurations.all {
 }
 
 dependencies {
-    api("com.whichlicense:sourcing:0.2.0-SNAPSHOT")
+    api("com.whichlicense:sourcing:0.7.7-SNAPSHOT")
+    api("com.whichlicense:configuration:0.7.7-SNAPSHOT")
+    implementation("com.fasterxml.jackson.core:jackson-core:2.15.0")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.15.0")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.9.3")
     testImplementation("org.mockito:mockito-subclass:5.3.1")
     testImplementation("org.mockito:mockito-junit-jupiter:5.3.1")
     testImplementation("org.assertj:assertj-core:3.24.2")
-    testImplementation("com.whichlicense.testing:naming:0.2.0-SNAPSHOT")
-    testImplementation("com.whichlicense.testing:nullable:0.2.0-SNAPSHOT")
+    testImplementation("com.whichlicense.testing:naming:0.7.6-SNAPSHOT")
+    testImplementation("com.whichlicense.testing:nullable:0.7.6-SNAPSHOT")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
 }
 
