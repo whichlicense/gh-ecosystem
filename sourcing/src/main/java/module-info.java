@@ -12,7 +12,7 @@ module whichlicense.sourcing.github {
     requires java.logging;
     requires com.fasterxml.jackson.databind;
     requires com.fasterxml.jackson.annotation;
-    requires whichlicense.configuration;
+    requires configuration.configuration;
     requires transitive whichlicense.sourcing;
     exports com.whichlicense.metadata.sourcing.repository.github;
     exports com.whichlicense.metadata.sourcing.repository.github.exceptions;
