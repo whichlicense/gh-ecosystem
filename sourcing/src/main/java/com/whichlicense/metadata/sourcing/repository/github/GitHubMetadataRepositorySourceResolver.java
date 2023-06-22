@@ -36,7 +36,7 @@ public record GitHubMetadataRepositorySourceResolver(MetadataSourceResolver next
 
     @Override
     public boolean handles(URL url, ReadableKeyedConfiguration configuration) {
-        return url.getHost().equals("github.com") && parts(url).count() >= 2;
+        return url.getHost().equals("github.com") && parts(url).count() >= 2 && !url.toString().endsWith(".zip");
     }
 
     //TODO support whichlicense/core-libs :: ContextualMetadataSourceCompleter

@@ -31,7 +31,7 @@ class GitHubMetadataRepositorySourceResolverTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"https://github.com", "https://github.com/", "https://github.com/whichlicense",
-            "https://github.com/whichlicense/"})
+            "https://github.com/whichlicense/", "https://github.com/whichlicense/frontend/archive/refs/heads/main.zip"})
     void givenGitHubMetadataRepositorySourceResolverWhenCallingHandlesWithInvalidGitHubProjectUrlThenTrueShouldBeReturned(String url) throws MalformedURLException {
         assertThat(RESOLVER.handles(new URL(url), CONFIG)).isFalse();
     }

@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "com.whichlicense.sourcing"
-version = "0.7.8-SNAPSHOT"
+version = "0.7.9-SNAPSHOT"
 
 java {
     toolchain {
@@ -33,7 +33,7 @@ configurations.all {
 }
 
 dependencies {
-    api("com.whichlicense:sourcing:0.7.8-SNAPSHOT")
+    api("com.whichlicense:sourcing:0.7.9-SNAPSHOT")
     api("com.whichlicense:configuration:0.7.8-SNAPSHOT")
     implementation("com.fasterxml.jackson.core:jackson-core:2.15.0")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.15.0")
