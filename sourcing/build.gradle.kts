@@ -37,7 +37,7 @@ dependencies {
     api("com.whichlicense:configuration:0.7.8-SNAPSHOT")
     implementation("com.fasterxml.jackson.core:jackson-core:2.15.0")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.15.0")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.0")
     testImplementation("org.junit.jupiter:junit-jupiter-params:5.9.3")
     testImplementation("org.mockito:mockito-subclass:5.4.0")
     testImplementation("org.mockito:mockito-junit-jupiter:5.4.0")
