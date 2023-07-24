@@ -44,7 +44,7 @@ dependencies {
     testImplementation("org.assertj:assertj-core:3.24.2")
     testImplementation("com.whichlicense.testing:naming:0.7.6-SNAPSHOT")
     testImplementation("com.whichlicense.testing:nullable:0.7.6-SNAPSHOT")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.0")
 }
 
 tasks.withType<JavaCompile> {
